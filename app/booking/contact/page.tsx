@@ -101,6 +101,7 @@ export default function ContactInfo() {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="John Doe"
                   required
+                  autoComplete="name"
                 />
               </div>
             </div>
@@ -122,6 +123,7 @@ export default function ContactInfo() {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="(555) 123-4567"
                   required
+                  autoComplete="tel"
                 />
               </div>
             </div>
@@ -143,6 +145,7 @@ export default function ContactInfo() {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="john@example.com"
                   required
+                  autoComplete="email"
                 />
               </div>
             </div>
@@ -164,6 +167,7 @@ export default function ContactInfo() {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="Enter your complete address"
                   required
+                  autoComplete="street-address"
                 />
               </div>
             </div>
