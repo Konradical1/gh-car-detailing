@@ -68,6 +68,14 @@ const galleryImages = [
     src: "https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
     alt: "Paint correction process" 
   },
+  { 
+    src: "/images/our-work/IMG_4468.jpeg", 
+    alt: "Car Exterior" 
+  },
+  { 
+    src: "/images/our-work/IMG_4470.jpeg", 
+    alt: "Car Interior" 
+  },
 ]
 
 export default function Home() {
