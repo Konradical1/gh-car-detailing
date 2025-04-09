@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Sparkles, Shield, Clock, Users, Search, CheckCircle, Star } from "lucide-react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const testimonials = [
   {
@@ -69,11 +70,11 @@ const galleryImages = [
     alt: "Paint correction process" 
   },
   { 
-    src: "/images/our-work/IMG_4468.jpeg", 
+    src: "/images/IMG_4468.jpeg", 
     alt: "Car Exterior" 
   },
   { 
-    src: "/images/our-work/IMG_4470.jpeg", 
+    src: "/images/IMG_4470.jpeg", 
     alt: "Car Interior" 
   },
 ]
@@ -81,6 +82,7 @@ const galleryImages = [
 export default function Home() {
   return (
     <div>
+      <SpeedInsights />
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute w-[200%] h-full left-[-50%] z-0">
           <iframe
