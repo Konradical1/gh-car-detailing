@@ -38,6 +38,7 @@ export default function PersonalInfo() {
               placeholder="John Doe"
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+              autoComplete="name"
             />
           </div>
         </div>
@@ -55,6 +56,7 @@ export default function PersonalInfo() {
               placeholder="(123) 456-7890"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              autoComplete="tel"
             />
           </div>
         </div>
@@ -72,6 +74,7 @@ export default function PersonalInfo() {
               placeholder="john@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              autoComplete="email"
             />
           </div>
         </div>

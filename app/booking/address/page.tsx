@@ -94,6 +94,7 @@ export default function AddressInfo() {
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"
                   placeholder="Enter your complete address including street, city, state, and zip code"
                   required
+                  autoComplete="street-address"
                 />
               </div>
               <p className="mt-2 text-sm text-gray-500">
