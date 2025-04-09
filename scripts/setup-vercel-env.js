@@ -2,46 +2,39 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-// Read .env.local file
-const envPath = path.join(__dirname, '../.env.local');
-let envVars = {};
+// Read .env file
+const envPath = path.join(process.cwd(), '.env');
+const envContent = fs.readFileSync(envPath, 'utf8');
 
-if (fs.existsSync(envPath)) {
-  const envContent = fs.readFileSync(envPath, 'utf8');
-  
-  // Parse .env.local file
-  envContent.split('\n').forEach(line => {
-    if (line && !line.startsWith('#')) {
-      const [key, value] = line.split('=');
-      if (key && value) {
-        envVars[key.trim()] = value.trim();
-      }
+// Parse environment variables
+const envVars = envContent
+  .split('\n')
+  .filter(line => line.trim() && !line.startsWith('#'))
+  .reduce((acc, line) => {
+    const [key, ...valueParts] = line.split('=');
+    const value = valueParts.join('=').trim();
+    if (key && value) {
+      acc[key.trim()] = value;
     }
-  });
-}
+    return acc;
+  }, {});
 
-// Check if we have any environment variables
-if (Object.keys(envVars).length === 0) {
-  console.log('No environment variables found in .env.local');
-  process.exit(1);
-}
-
-// Add each environment variable to Vercel
 console.log('Setting up environment variables in Vercel...');
 
+// Add each environment variable
 Object.entries(envVars).forEach(([key, value]) => {
   try {
     console.log(`Adding ${key}...`);
     // Add to production environment
-    execSync(`vercel env add ${key} production`, { 
-      input: value + '\n', // Add newline to automatically confirm
+    execSync(`echo "${value}" | vercel env add ${key} production`, { 
       stdio: ['pipe', 'inherit', 'inherit']
     });
+    console.log(`✅ Added ${key} to production environment`);
   } catch (error) {
-    console.log(`Note: ${key} might already exist or encountered an error.`);
+    console.log(`Note: ${key} encountered an error:`, error.message);
   }
 });
 
-console.log('\nEnvironment variables have been set up in Vercel.');
+console.log('\n✅ Environment variables have been set up in Vercel.');
 console.log('You may need to redeploy your project for the changes to take effect.');
 console.log('Run: vercel deploy --prod'); 
