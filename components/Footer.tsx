@@ -20,21 +20,28 @@ const TikTokIcon = () => (
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8">
+    <footer className="bg-black text-white py-4">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between">
-          <div className="w-full md:w-1/2 mb-6 md:mb-0">
-            <h3 className="text-xl font-bold mb-4">GH Car Detailing</h3>
-            <p>Premium auto detailing services for discerning clients.</p>
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex items-center gap-4">
+            <h3 className="text-xl font-bold">GH Car Detailing</h3>
+            <span className="text-gray-400">|</span>
+            <p className="text-sm">Premium auto detailing services</p>
           </div>
-          <div className="w-full md:w-1/2">
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <p>Phone: 513-448-9413</p>
-            <p>Email: info@ghcardetailing.com</p>
+          
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm">Phone:</span>
+              <a href="tel:513-448-9413" className="text-sm hover:text-accent transition-colors">513-448-9413</a>
+            </div>
+            <span className="text-gray-400">|</span>
+            <div className="flex items-center gap-2">
+              <span className="text-sm">Email:</span>
+              <a href="mailto:info@ghcardetailing.com" className="text-sm hover:text-accent transition-colors">info@ghcardetailing.com</a>
+            </div>
           </div>
-        </div>
-        <div className="mt-8 text-center">
-          <div className="flex justify-center space-x-6 mb-4">
+
+          <div className="flex items-center gap-4">
             <a 
               href="https://instagram.com" 
               target="_blank" 
@@ -42,7 +49,7 @@ const Footer = () => {
               className="text-white hover:text-accent transition-colors"
               aria-label="Follow us on Instagram"
             >
-              <Instagram className="w-6 h-6" />
+              <Instagram className="w-5 h-5" />
             </a>
             <a 
               href="https://tiktok.com" 
@@ -53,8 +60,9 @@ const Footer = () => {
             >
               <TikTokIcon />
             </a>
+            <span className="text-gray-400">|</span>
+            <p className="text-sm">&copy; {new Date().getFullYear()} GH Car Detailing</p>
           </div>
-          <p>&copy; {new Date().getFullYear()} GH Car Detailing. All rights reserved.</p>
         </div>
       </div>
     </footer>
