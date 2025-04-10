@@ -27,8 +27,29 @@ const sprintura = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'GH Car Detailing',
-  description: 'Professional car detailing services in your area',
+  title: 'GH Car Detailing | Premium Auto Detailing Services',
+  description: 'Premium auto detailing services for discerning clients. Expert car care, interior & exterior detailing. Serving Cincinnati area. Call 513-448-9413 for appointments.',
+  keywords: 'car detailing, auto detailing, premium car care, Cincinnati car detailing, mobile detailing, interior detailing, exterior detailing',
+  authors: [{ name: 'GH Car Detailing' }],
+  creator: 'GH Car Detailing',
+  publisher: 'GH Car Detailing',
+  formatDetection: {
+    telephone: true,
+    email: true,
+  },
+  openGraph: {
+    title: 'GH Car Detailing | Premium Auto Detailing Services',
+    description: 'Premium auto detailing services for discerning clients. Expert car care, interior & exterior detailing. Serving Cincinnati area.',
+    url: 'https://ghcardetailing.com',
+    siteName: 'GH Car Detailing',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GH Car Detailing | Premium Auto Detailing Services',
+    description: 'Premium auto detailing services for discerning clients. Expert car care, interior & exterior detailing.',
+  },
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -40,6 +61,9 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],
+  },
+  verification: {
+    google: 'your-google-site-verification', // You'll need to add your Google Search Console verification code here
   },
 }
 
