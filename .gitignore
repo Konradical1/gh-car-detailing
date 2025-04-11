@@ -39,4 +39,6 @@ next-env.d.ts
 *.node
 
 # video files
-public/videos/detailing-background.mp4
+public/videos/
+*.mp4
+videos/
