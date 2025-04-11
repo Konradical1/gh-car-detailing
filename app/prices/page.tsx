@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import React from 'react'
 import { Car, Shield, Sparkles, Droplets, Crown, Wand2, Check } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'GH Car Detailing Services & Pricing | Cincinnati Auto Detailing',
+  description: 'View our detailed pricing for premium auto detailing services in Cincinnati. From basic details to ceramic coating, find the perfect package for your vehicle. Transparent pricing, exceptional results.',
+}
 
 const services = [
   {

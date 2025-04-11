@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Image from "next/image"
 import { CheckCircle, Award, Users, Clock } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'About GH Car Detailing | Our Story & Expertise',
+  description: 'Learn about GH Car Detailing\'s journey in Cincinnati. Our expert team brings years of experience in premium auto detailing, using advanced techniques and premium products to transform your vehicle.',
+}
 
 export default function About() {
   return (

@@ -1,4 +1,16 @@
 import { Star } from "lucide-react"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Customer Testimonials | GH Car Detailing Reviews',
+  description: 'Read what our customers say about GH Car Detailing. Real reviews from satisfied clients about our premium auto detailing services in Cincinnati.',
+  openGraph: {
+    title: 'Customer Testimonials | GH Car Detailing Reviews',
+    description: 'Read what our customers say about GH Car Detailing. Real reviews from satisfied clients.',
+    type: 'website',
+    url: 'https://ghcardetailing.com/testimonials',
+  },
+}
 
 const testimonials = [
   {

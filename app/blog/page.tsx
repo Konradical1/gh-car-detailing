@@ -3,6 +3,18 @@ import Link from "next/link"
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import { format } from 'date-fns'
 import { getAllPosts } from '@/lib/blog'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Car Detailing Blog | GH Car Detailing',
+  description: 'Expert tips, guides, and insights on car detailing. Learn about ceramic coating, paint protection, interior detailing, and more from Cincinnati\'s premier auto detailing service.',
+  openGraph: {
+    title: 'Car Detailing Blog | GH Car Detailing',
+    description: 'Expert tips, guides, and insights on car detailing. Learn about ceramic coating, paint protection, interior detailing, and more.',
+    type: 'website',
+    url: 'https://ghcardetailing.com/blog',
+  },
+}
 
 export default async function BlogPage() {
   const posts = await getAllPosts()

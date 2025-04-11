@@ -5,6 +5,48 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getBlogPost } from '@/lib/blog'
 import styles from './blog-post.module.css'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const post = await getBlogPost(params.slug)
+
+  if (!post) {
+    return {
+      title: 'Blog Post Not Found | GH Car Detailing',
+      description: 'The requested blog post could not be found.',
+    }
+  }
+
+  return {
+    title: `${post.title} | GH Car Detailing Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['GH Car Detailing'],
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
+    },
+  }
+}
 
 export default async function BlogPostPage({
   params,

@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     // Create email content for admin notification
     const adminEmail = {
       from: 'grantharrison@ghcardetailing.com',
-      to: 'fischerpaxton@gmail.com',
+      to: ['fischerpaxton@gmail.com', 'Ghdetailing8@gmail.com'],
       subject: 'New Contact Form Submission',
       html: `
         <h2>New Contact Form Submission</h2>

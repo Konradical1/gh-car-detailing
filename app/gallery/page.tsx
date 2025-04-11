@@ -1,4 +1,16 @@
 import Image from "next/image"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Car Detailing Gallery | Before & After Photos | GH Car Detailing',
+  description: 'View our car detailing gallery showcasing before and after photos of our premium detailing services. See the transformation of vehicles through our expert detailing work.',
+  openGraph: {
+    title: 'Car Detailing Gallery | Before & After Photos | GH Car Detailing',
+    description: 'View our car detailing gallery showcasing before and after photos of our premium detailing services.',
+    type: 'website',
+    url: 'https://ghcardetailing.com/gallery',
+  },
+}
 
 const galleryImages = [
   { 

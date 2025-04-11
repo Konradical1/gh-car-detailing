@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // Create email content for admin notification
     const adminEmail = {
       from: 'grantharrison@ghcardetailing.com',
-      to: 'fischerpaxton@gmail.com',
+      to: ['fischerpaxton@gmail.com', 'Ghdetailing8@gmail.com'],
       subject: 'New Car Detailing Booking',
       html: `
         <h2>New Booking Details</h2>

@@ -44,20 +44,30 @@ export const metadata: Metadata = {
     siteName: 'GH Car Detailing',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/icon-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'GH Car Detailing Logo'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GH Car Detailing | Premium Auto Detailing Services',
     description: 'Premium auto detailing services for discerning clients. Expert car care, interior & exterior detailing.',
+    images: ['/icon-512x512.png'],
   },
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon-384x384.png', sizes: '384x384', type: 'image/png' },
       { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
+    shortcut: ['/favicon.ico'],
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],

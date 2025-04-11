@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     // Create email content for admin notification
     const adminEmail = {
       from: 'grantharrison@ghcardetailing.com',
-      to: 'fischerpaxton@gmail.com',
+      to: ['fischerpaxton@gmail.com', 'Ghdetailing8@gmail.com'],
       subject: 'Incomplete Booking Alert',
       html: `
         <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background-color: #ffffff;">

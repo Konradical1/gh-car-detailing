@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Sparkles, Shield, Clock, Users, Search, CheckCircle, Star } from "lucide-react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import HeroSection from "@/components/HeroSection"
 
 const testimonials = [
   {
@@ -83,51 +84,7 @@ export default function Home() {
   return (
     <div>
       <SpeedInsights />
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute w-[200%] h-full left-[-50%] z-0">
-          <iframe
-            src="https://www.youtube.com/embed/Hjnn6ec7fWM?autoplay=1&loop=1&playlist=Hjnn6ec7fWM&t=0&mute=1&playsinline=1&controls=0&showinfo=0&autohide=1&allowfullscreen=true&mode=transparent&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1&origin=http://localhost:3000"
-            className="w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="eager"
-            style={{ 
-              border: 'none',
-              pointerEvents: 'none',
-              transform: 'scale(1.5)',
-              transformOrigin: 'center center'
-            }}
-            onError={(e) => {
-              console.error('Video failed to load:', e);
-              // You might want to show a fallback image or message here
-            }}
-          />
-        </div>
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-        <div className="relative z-20 text-center text-white">
-          <h1 className="text-6xl font-sprintura mb-4 animate-fade-in">Elevate Your Ride</h1>
-          <p className="text-xl mb-8 animate-fade-in delay-200">Experience Unparalleled Auto Detailing</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/booking" 
-              className="bg-accent text-white px-8 py-3 rounded-md hover:bg-accent/90 transition-all hover-scale"
-            >
-              Get Started
-            </Link>
-            <button 
-              onClick={() => {
-                const servicesSection = document.getElementById('services');
-                if (servicesSection) {
-                  servicesSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-white text-accent border border-accent px-8 py-3 rounded-md hover:bg-accent/10 transition-all hover-scale"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <section id="services" className="py-20 container mx-auto px-4">
         <h2 className="text-4xl font-milner mb-12 text-center">Our Signature Services</h2>
